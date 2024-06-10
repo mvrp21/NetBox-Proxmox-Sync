@@ -97,8 +97,8 @@ def update_old_vms(old_vms, new_vms):
                 old_tags = set([tag['name'] for tag in old_vms[name][key]])
                 new_tags = set([tag['name'] for tag in new_vms[name][key]])
                 # Reattribute tags
+                old_vms[name][key] = new_vms[name][key]
                 if old_tags != new_tags:
-                    old_vms[name][key] = new_vms[name][key]
                     something_changed = True
             # General case: value for key is different means it changed
             elif old_vms[name][key] != new_vms[name][key]:
