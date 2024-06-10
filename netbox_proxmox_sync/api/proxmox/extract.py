@@ -99,7 +99,7 @@ def extract_vm_data(cluster_name, node_name, vm_status):
         'device': {'name': node_name},
         'cluster': {'name': cluster_name},
         'vcpus': vm_status['cpus'],
-        'memory': vm_status['maxmem'] / 2**10,
+        'memory': vm_status['maxmem'] / 2**20,
         'tags': [{'name': tag} for tag in vm_config['tags'].split(';')],
         'custom_fields': {'vmid': vm_status['vmid']}
     }
